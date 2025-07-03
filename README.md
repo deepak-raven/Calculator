@@ -1,2 +1,29 @@
-# Calculator
-A modern calculator built with HTML and CSS featuring a responsive design, 3D-style input, and a light/dark mode toggle. Supports basic arithmetic operations with a clean and user-friendly interface. Ideal for learning front-end UI styling and layout.
+# 🧮 Calculator
+
+A responsive, theme-toggle calculator built with **HTML**, **CSS**, and **JavaScript**.  
+Supports basic arithmetic operations and works seamlessly on both desktop and mobile.
+
+## 🔗 Live Demo
+
+👉 [Click here to use the calculator](https://deepak-raven.github.io/Calculator/)
+
+## 📱 Features
+
+- Responsive design (mobile + desktop)
+- Light/Dark mode toggle
+- Basic operations: Addition, Subtraction, Multiplication, Division
+- Clean and modern UI
+
+## 📂 Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+
+## 🚀 Getting Started
+
+To run locally:
+
+```bash
+git clone https://github.com/deepak-raven/Calculator.git
+cd Calculator
