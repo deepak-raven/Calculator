@@ -1,0 +1,177 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans";
+}
+
+
+body{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  height: 100dvh;
+  align-items: flex-end;  
+  background-color: black;
+  transition: background-color 0.4s ease-out;
+}
+
+body.light-mode{
+  background-color: #f1f1f1;
+}
+
+.calculator{
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  resize: both;
+  height: auto;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  transition: background-color 0.4s;
+}
+
+
+.calculator::before {
+  content: '';
+  position: absolute;
+  top: var(--click-y, 50%);
+  left: var(--click-x, 50%);
+  width: 0;
+  height: 0;
+  background: #f1f1f1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+  transition: width 0.5s ease-out, height 0.5s ease-out, opacity 0.5s ease-out, background-color 0.2s;
+}
+
+.calculator.ripple-light::before {
+  width: 2000px;
+  height: 2000px;
+  opacity: 1;
+  background-color: #f1f1f1;
+}
+
+/* Animate circle shrinking for dark mode */
+.calculator.ripple-dark::before {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  background-color: #121212;
+}
+
+.calculator * {
+  position: relative;
+  z-index: 3;
+}
+
+/* Light mode actual styles */
+.calculator.light-mode {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.calculator .light-mode input {
+  background-color: #ffffff;
+  color: black;
+}
+
+.calculator.light-mode button {
+  color: black;
+}
+
+.calculator.light-mode .orange {
+  color: #ff6940;
+}
+
+.calculator.light-mode .equal {
+  background-color: #ff6940;
+  color: white;
+}
+
+input{
+  color: white;
+  width: 100%;
+  background: black;
+  outline: none;
+  border: none;
+  text-align: right;
+  padding: 20px 10px;
+  font-size: 3rem;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+}
+
+/* Light mode input fix */
+.calculator.light-mode input {
+  background-color: #f1f1f1;
+  color: black;
+  border: none;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  padding-top: 10px;
+  gap: 0.7rem;
+  border-top: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+button{
+  height: 4rem;
+  aspect-ratio: 1/1;
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.2s;
+  aspect-ratio: 1/1;
+  justify-content: center;
+  transition: background-color 0.1s ease-out, transform 0.1s ease-out;
+}
+
+.grid .orange{
+  color: #ff6940;
+}
+
+input::placeholder{
+  color: white;
+}
+
+.calculator.light-mode input::placeholder {
+  color: #555;
+}
+
+.grid .equal{
+  background-color: #ff6940;
+  border-radius: 50%;
+
+}
+
+button::hover{
+  background-color: darkgrey;
+}
+
+@media (min-width: 768px) {
+  body{
+    align-items: center;
+  }
+  .calculator {
+    border: 2px solid orange;
+    border-radius: 1rem;
+    box-shadow: 0 0 24px orange;
+    overflow: auto;
+    resize: both;
+    min-height: auto;
+  }
+}
+
+button:active {
+  background-color: #444;
+  transform: scale(1);
+}
